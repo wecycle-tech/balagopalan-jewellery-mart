@@ -333,10 +333,23 @@ header .navbar {
 	text-transform: uppercase;
 	font-size: 24px;
 	font-weight: 700;
+	
 	-webkit-transition: all .3s ease 0s;
     -moz-transition: all .3s ease 0s;
     -o-transition: all .3s ease 0s;
     transition: all .3s ease 0s;
+}
+.navbar .navbar-brand h2 .brand-name {
+    font-size: 22px; /* Larger font size for "Balagopalan" */
+    font-weight: bold; /* Bold for emphasis */
+    color: #fdcd00; /* Brand color */
+}
+
+.navbar .navbar-brand h2 .brand-subtitle {
+    font-size: 22px; /* Slightly smaller font size for "Jewellery Mart" */
+    font-weight: bold; /* Regular weight */
+    color: #fdcd00; /* Brand color */
+    display: inline-block; /* Stay on the same line */
 }
 .navbar .navbar-brand h2 em {
 	font-style: normal;
@@ -1298,7 +1311,6 @@ footer ul.menu-list li a:hover {
 
 
 
-
 /* Responsive Style */
 @media (max-width: 768px) {
 	.sub-header {
@@ -1319,11 +1331,24 @@ footer ul.menu-list li a:hover {
 		line-height: 25px;
 		margin-bottom: 30px;
 	}
-	.Modern-Slider .NextArrow{
-	  right:5px;
+	.transparent-box {
+		height: auto; /* Allow the height to adjust based on content */
+		padding: 20px; /* Ensure enough padding for content */
+		width: 100%; /* Set width to fill the available space */
+		margin: 0 auto;
+		margin-top: 40px; /* Center the box */
+	}
+	.Modern-Slider .item p {
+		max-width: 100%; /* Allow the text to take full width on small screens */
+		font-size: 15px; /* Adjust font size for better readability */
+		line-height: 24px; /* Adjust line height for smaller text */
+	}
+  
+	.Modern-Slider .NextArrow {
+	  right: 5px;
 	}
 	.Modern-Slider .PrevArrow {
-	  left:5px;
+	  left: 5px;
 	}
 	.request-form {
 		text-align: center;
@@ -1335,6 +1360,11 @@ footer ul.menu-list li a:hover {
 	.products .service-item {
 		margin-bottom: 30px;
 	}
+	.fun-facts {
+		background-image: url('/assets/images/necklace1.jfif'); /* Dummy image for mobile */
+		background-attachment: scroll; /* Change attachment to scroll for mobile */
+	}	
+	
 	.fun-facts .left-content {
 		margin-right: 0px;
 		margin-bottom: 30px;
@@ -1367,54 +1397,83 @@ footer ul.menu-list li a:hover {
 	.contact-item {
 		margin-bottom: 30px;
 	}
+}/* For mobile and smaller screens */
+@media (max-width: 992px) {
+    .navbar {
+        height: 90px;
+    }
+
+    .navbar .navbar-brand {
+        position: absolute;
+        left: 30px;
+        top: 10px; /* Adjusted to give space for the text */
+    }
+
+    /* Stack "Balagopalan" and "Jewellery Mart" on two lines */
+    .navbar .navbar-brand h2 {
+        display: flex; /* Use flex to control layout */
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+        margin: 0; /* Remove any margin */
+    }
+
+    /* Styling for the brand name "Balagopalan" */
+    .navbar .navbar-brand h2 .brand-name {
+        font-size: 16px; /* Adjust size for smaller screens */
+        font-weight: bold; /* Make the text stand out */
+        color: #fdcd00; /* Use your preferred color */
+    }
+
+    /* Styling for the subtitle "Jewellery Mart" */
+    .navbar .navbar-brand h2 .brand-subtitle {
+        font-size: 12px; /* Keep "Jewellery Mart" smaller */
+        font-weight: 400;
+		padding-top: 5px; /* Slightly lighter weight */
+        color: #fdcd00; /* Same color */
+    }
+
+    /* Ensure the sandwich menu doesn’t overlap the text */
+    .navbar-toggler {
+        position: absolute;
+        right: 15px;
+        top: 25px; /* Ensure it doesn't overlap the text */
+    }
+
+    /* Rest of your navbar styles */
+    #navbarResponsive {
+        z-index: 99999;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #4e0300;
+        box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar .navbar-nav .nav-item {
+        border-bottom: 1px solid #fdcd00;
+    }
+
+    .navbar .navbar-nav .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .navbar .navbar-nav a.nav-link {
+        padding: 15px 0px;
+        color: #fdcd00 !important;
+    }
+
+    .navbar .navbar-nav .nav-link:hover,
+    .navbar .navbar-nav .active>.nav-link,
+    .navbar .navbar-nav .nav-link.current,
+    .navbar .navbar-nav .nav-link.show,
+    .navbar .navbar-nav .show>.nav-link {
+        color: #fdcd00!important;
+        border-bottom: none!important;
+    }
 }
 
-@media (max-width: 992px) {
-	.navbar{
-		height: 90px;
-	}
-	.navbar .navbar-brand {
-		position: absolute;
-		left: 30px;
-		top: -10;
-	}
-	.navbar .navbar-brand {
-		width: auto;
-	}.navbar .navbar-brand h2 {
-		font-size: 10px;
-	}
-	.navbar:after {
-		display: none;
-	}
-	#navbarResponsive {
-	    z-index: 99999;
-	    position: absolute;
-	    top: 80px;
-	    left: 0;
-	    width: 100%;
-	    text-align: center;
-	    background-color: #4e0300;
-	    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
-	}
-	.navbar .navbar-nav .nav-item {
-		border-bottom: 1px solid #fdcd00;
-	}
-	.navbar .navbar-nav .nav-item:last-child {
-		border-bottom: none;
-	}
-	.navbar .navbar-nav a.nav-link {
-		padding: 15px 0px;
-		color: #fdcd00 !important;
-	}
-	.navbar .navbar-nav .nav-link:hover,
-	.navbar .navbar-nav .active>.nav-link,
-	.navbar .navbar-nav .nav-link.current,
-	.navbar .navbar-nav .nav-link.show,
-	.navbar .navbar-nav .show>.nav-link {
-		color: #fdcd00!important;
-		border-bottom: none!important;
-	}
-}
 
 /* Section Styling */
 .terms-conditions {
